@@ -1,0 +1,18 @@
+modules:
+  macro:
+    - key: jsoncrackembedderiframe-hello-world
+      resource: main
+      resolver:
+        function: resolver
+      title: JsonCrackEmbedderIframe
+      description: Inserts Hello world!
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/7e392386-d361-41b2-96ce-5f22fb1280b0
