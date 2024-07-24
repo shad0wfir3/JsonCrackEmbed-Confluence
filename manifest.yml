@@ -1,18 +1,26 @@
 modules:
   macro:
-    - key: jsoncrackembedderiframe-hello-world
+    - key: jsoncrackembedderiframe
       resource: main
       resolver:
         function: resolver
-      title: JsonCrackEmbedderIframe
-      description: Inserts Hello world!
-  function:
-    - key: resolver
-      handler: index.handler
-resources:
-  - key: main
-    path: static/hello-world/build
+      title: JsonCrackEmbedder
+      description: Embed JSON data using JSONCrack
+      function:
+        - key: resolver
+          handler: src/resolver.handler
+permissions:
+  external:
+    fetch:
+      backend:
+        - 'https://jsoncrack.com'
+  scopes:
+    - storage:app
 app:
   runtime:
     name: nodejs18.x
   id: ari:cloud:ecosystem::app/7e392386-d361-41b2-96ce-5f22fb1280b0
+resources:
+  - key: main
+    path: static/jsoncrackembedded/build
+
