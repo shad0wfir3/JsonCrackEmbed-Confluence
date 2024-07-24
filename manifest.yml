@@ -6,9 +6,9 @@ modules:
         function: resolver
       title: JsonCrackEmbedder
       description: Embed JSON data using JSONCrack
-      function:
-        - key: resolver
-          handler: src/resolver.handler
+  function:
+    - key: resolver
+      handler: resolver.handler
 permissions:
   external:
     fetch:
@@ -23,4 +23,3 @@ app:
 resources:
   - key: main
     path: static/jsoncrackembedded/build
-
